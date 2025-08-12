@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suman Krishna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Body Gradients */
+    body {
+      --gradient-light: linear-gradient(135deg, #6dd5ed, #2193b0, #8ec5fc, #e0c3fc);
+      --gradient-dark: linear-gradient(135deg, #232526, #414345, #0f2027, #2c5364);
+      --text-light: #222;
+      --text-dark: #fff;
+
+      background: var(--gradient-light);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    body.dark {
+      background: var(--gradient-dark);
+      color: var(--text-dark);
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      font-weight: 600;
+      color: inherit;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      margin: 2rem;
+      border-radius: 10px;
+    }
+
+    body.dark section {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Menu */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: -200px;
+        width: 200px;
+        padding: 1rem;
+        transition: right 0.3s ease-in-out;
+      }
+      nav ul.show {
+        right: 0;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    }
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="me.jpeg" alt="My Logo" class="logo">
+    <h1>Suman Krishna's Space</h1>
+    <span class="menu-toggle">&#9776;</span>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#hackathons">Hackathons</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle">🌓 Auto Mode</button>
+  </header>
+  <style>
+    .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--section-gradient);
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #00f, #0f0);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+  </style>
+
+  <section class="hero">
+    <h2>Welcome to My Creative Space</h2>
+    <p>Explore my latest projects, insightful blogs, and more.</p>
+  </section>
+
+   <section id="about">
+  <h3>About Me</h3>
+  <div class="about-container">
+    
+    <!-- Profile Image -->
+    <div class="about-img">
+      <img src="me.jpeg" alt="My Profile">
+    </div>
+
+    <!-- About Text -->
+    <div class="about-text">
+      <p>
+        Hi! I’m <strong>Suman Krishna</strong>, a passionate developer and creative thinker who loves building 
+        innovative projects, writing blogs, and participating in hackathons.  
+        My goal is to combine technology, creativity, and problem-solving to make a real-world impact.  
+      </p>
+      <p>
+        I enjoy exploring cutting-edge tech — from AI & machine learning to game dev and responsive web design.  
+        Outside of coding, I mentor peers and organize community events.
+      </p>
+
+      <!-- Skills -->
+      <h4>Skills</h4>
+      <div class="skill">
+        <span>Web Development</span>
+        <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill">
+        <span>Machine Learning</span>
+        <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+      </div>
+      <div class="skill">
+        <span>Game Development</span>
+        <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
+      </div>
+      <div class="skill">
+        <span>UI/UX Design</span>
+        <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+      </div>
+
+      <!-- Qualification -->
+      <h4>Qualification</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            🎓 B.Tech in Computer Science & Engineering – I. K. Gujral Punjab Technical University (3rd Year)
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            🏆 Certification in Android App Development
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            📜 Certification in Data Science & Machine Learning
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* About Container */
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+
+  /* Profile Image */
+  .about-img {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+  }
+  .about-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.4);
+  }
+
+  /* About Text */
+  .about-text {
+    flex: 2;
+    min-width: 300px;
+  }
+  .about-text h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Skills */
+  .skill {
+    margin-bottom: 1rem;
+  }
+  .progress {
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 10px;
+  }
+  .progress-bar {
+    background: linear-gradient(90deg, #ffdd57, #ff7b00);
+    height: 10px;
+    animation: fillProgress 2s ease;
+  }
+  @keyframes fillProgress {
+    from { width: 0; }
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    margin-top: 1rem;
+    padding-left: 20px;
+    border-left: 2px solid rgba(255,255,255,0.4);
+  }
+  .timeline-item {
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #ffdd57;
+    border-radius: 50%;
+  }
+  .timeline-content {
+    padding-left: 10px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .about-text {
+      text-align: center;
+    }
+    .timeline {
+      border-left: none;
+      padding-left: 0;
+    }
+    .timeline-dot {
+      display: none;
+    }
+  }
+</style>
+
+
+<section id="projects">
+  <h3>My Projects</h3>
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card" onclick="openProjectDetails('project1')">
+      <h4>Project 1: Plant Disease Detection</h4>
+      <p>AI-based web app that detects plant diseases from images.</p>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card" onclick="openProjectDetails('project2')">
+      <h4>Project 2: Space Jumper Game</h4>
+      <p>Fun and challenging cross-platform jumping game.</p>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card" onclick="openProjectDetails('project3')">
+      <h4>Project 3: Real-Time Blood Donation App</h4>
+      <p>AI-powered app for managing blood donation and transfusion.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Project 1 Modal -->
+<div id="project1" class="project-modal">
+  <div class="project-modal-content">
+    <span class="close" onclick="closeProjectDetails('project1')">&times;</span>
+    <h2>Plant Disease Detection & Recognition</h2>
+    <p><strong>Why I Made This:</strong> Help farmers detect plant diseases early.</p>
+    <p><strong>Purpose:</strong> Predict plant diseases from leaf images and suggest treatment.</p>
+    <p><strong>Skills Enhanced:</strong> ML model building, data preprocessing, image recognition, web integration.</p>
+    <p><strong>Tools Used:</strong> Python, TensorFlow, Flask, OpenCV, HTML, CSS, JavaScript.</p>
+    <p><strong>Extra Highlights:</strong> 92% accuracy using PlantVillage dataset, fertilizer suggestions included.</p>
+    <a href="https://github.com/yourusername/project1" target="_blank" class="view-project-btn">🔗 View Project</a>
+  </div>
+</div>
+
+<!-- Project 2 Modal -->
+<div id="project2" class="project-modal">
+  <div class="project-modal-content">
+    <span class="close" onclick="closeProjectDetails('project2')">&times;</span>
+    <h2>Space Jumper Game</h2>
+    <p><strong>Why I Made This:</strong> To create an engaging game for entertainment and learning game mechanics.</p>
+    <p><strong>Purpose:</strong> Provide a fun, challenging, and addictive jumping game across platforms.</p>
+    <p><strong>Skills Enhanced:</strong> Game physics, UI design, cross-platform compatibility.</p>
+    <p><strong>Tools Used:</strong> Unity, C#, Photoshop, Blender.</p>
+    <p><strong>Extra Highlights:</strong> Fully responsive controls for mobile & PC, added scoring and leaderboard system.</p>
+    <a href="https://github.com/yourusername/project2" target="_blank" class="view-project-btn">🔗 View Project</a>
+  </div>
+</div>
+
+<!-- Project 3 Modal -->
+<div id="project3" class="project-modal">
+  <div class="project-modal-content">
+    <span class="close" onclick="closeProjectDetails('project3')">&times;</span>
+    <h2>Real-Time Blood Donation & Transfusion App</h2>
+    <p><strong>Why I Made This:</strong> To save lives by connecting donors and patients faster.</p>
+    <p><strong>Purpose:</strong> Enable real-time blood donor-patient matching and predictive availability tracking.</p>
+    <p><strong>Skills Enhanced:</strong> API integration, real-time database handling, predictive analytics.</p>
+    <p><strong>Tools Used:</strong> Flutter, Firebase, Python, AI models, e-RaktKosh API.</p>
+    <p><strong>Extra Highlights:</strong> Donor history tracking, blood bank integration, emergency alerts system.</p>
+    <a href="https://github.com/yourusername/project3" target="_blank" class="view-project-btn">🔗 View Project</a>
+  </div>
+</div>
+
+<style>
+  .projects-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .project-card {
+    flex: 1 1 calc(300px);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  .project-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+  }
+  .project-modal-content {
+    background: var(--card-bg, #fff);
+    color: var(--card-text, #000);
+    padding: 2rem;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease;
+  }
+  .close {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+  }
+
+    .view-project-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(90deg, #007BFF, #00C9A7);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  .view-project-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0056b3, #00a187);
+  }
+</style>
+
+<script>
+  function openProjectDetails(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function closeProjectDetails(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+
+  <!-- Blog Section -->
+<section id="blogs">
+  <h3>Latest Blogs</h3>
+  <div class="blog-container">
+    <!-- Blog 1 Card -->
+    <div class="blog-card" onclick="openBlogDetails('blog1')">
+      <h4>How AI is Transforming Agriculture</h4>
+      <p>Exploring how artificial intelligence is revolutionizing farming and crop management...</p>
+    </div>
+
+    <!-- Blog 2 Card -->
+    <div class="blog-card" onclick="openBlogDetails('blog2')">
+      <h4>The Future of Game Development</h4>
+      <p>Trends and technologies shaping the future of immersive games...</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog 1 Modal -->
+<div id="blog1" class="blog-modal">
+  <div class="blog-modal-content">
+    <span class="close" onclick="closeBlogDetails('blog1')">&times;</span>
+    <h2>How AI is Transforming Agriculture</h2>
+    <div class="blog-scroll">
+      <p>
+        Artificial Intelligence (AI) is no longer a futuristic concept—it’s here, and it’s transforming industries across the globe. 
+        In agriculture, AI is revolutionizing how crops are grown, monitored, and harvested. Farmers are leveraging machine learning models, 
+        computer vision, and predictive analytics to improve yields, reduce waste, and make farming more sustainable...
+      </p>
+      <p>
+        One of the most impactful applications of AI in agriculture is **plant disease detection**. By using deep learning models trained on 
+        thousands of plant leaf images, farmers can identify diseases early, preventing crop loss and ensuring healthier yields.  
+        For example, convolutional neural networks (CNNs) can detect patterns invisible to the human eye...
+      </p>
+      <p>
+        Beyond disease detection, AI also powers **precision farming**—the practice of using data to guide farming decisions. 
+        From irrigation systems that adjust water flow automatically to drones that spray pesticides only where needed, 
+        AI-driven solutions minimize waste and optimize resources.  
+        This is particularly important in regions facing water scarcity...
+      </p>
+      <p>
+        As AI technology becomes more accessible, even small-scale farmers are benefiting from mobile apps and low-cost sensors. 
+        With the integration of **IoT devices**, real-time soil monitoring, weather prediction, and crop health analysis have become 
+        part of everyday farming practices.  
+        The future holds even greater promise with autonomous tractors, robotic harvesters, and AI-powered market forecasting...
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="blog2" class="blog-modal">
+  <div class="blog-modal-content">
+    <span class="close" onclick="closeBlogDetails('blog2')">&times;</span>
+    <h2>How AI is Transforming Agriculture</h2>
+    <div class="blog-scroll">
+      <p>
+        Artificial Intelligence (AI) is no longer a futuristic concept—it’s here, and it’s transforming industries across the globe. 
+        In agriculture, AI is revolutionizing how crops are grown, monitored, and harvested. Farmers are leveraging machine learning models, 
+        computer vision, and predictive analytics to improve yields, reduce waste, and make farming more sustainable...
+      </p>
+      <p>
+        One of the most impactful applications of AI in agriculture is **plant disease detection**. By using deep learning models trained on 
+        thousands of plant leaf images, farmers can identify diseases early, preventing crop loss and ensuring healthier yields.  
+        For example, convolutional neural networks (CNNs) can detect patterns invisible to the human eye...
+      </p>
+      <p>
+        Beyond disease detection, AI also powers **precision farming**—the practice of using data to guide farming decisions. 
+        From irrigation systems that adjust water flow automatically to drones that spray pesticides only where needed, 
+        AI-driven solutions minimize waste and optimize resources.  
+        This is particularly important in regions facing water scarcity...
+      </p>
+      <p>
+        As AI technology becomes more accessible, even small-scale farmers are benefiting from mobile apps and low-cost sensors. 
+        With the integration of **IoT devices**, real-time soil monitoring, weather prediction, and crop health analysis have become 
+        part of everyday farming practices.  
+        The future holds even greater promise with autonomous tractors, robotic harvesters, and AI-powered market forecasting...
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Styles -->
+<style>
+.blog-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+      background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  max-width: 300px;
+}
+
+.blog-card:hover {
+  transform: scale(1.03);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-card h4 {
+  margin: 0.5rem;
+}
+
+.blog-card p {
+  margin: 0.5rem;
+  color: #555;
+}
+
+.blog-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.blog-modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+.blog-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.blog-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.blog-scroll::-webkit-scrollbar-thumb {
+  background: #007BFF;
+  border-radius: 5px;
+}
+
+.blog-modal .close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function openBlogDetails(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function closeBlogDetails(id) {
+  document.getElementById(id).style.display = 'none';
+}
+</script>
+
+ 
+
+ <section id="hackathons">
+  <h3>💡 Upcoming Hackathons</h3>
+  <div class="hackathon-grid">
+
+    <!-- Hackathon 1 -->
+    <div class="hackathon-card">
+   
+      <h4>Lights Camera Hackathon</h4>
+      <p>A 3-hour Editing Challenge for innovation, teamwork, and big prizes.</p>
+      <ul>
+        <li>💰 Entry Fee - ₹100 per head</li>
+        <li>📅 <span id="timer1">Loading...</span></li>
+      </ul>
+      <a href="https://forms.gle/88BNzWk16dauUEK67" target="_blank" class="hackathon-btn">Register Now</a>
+    </div>
+
+    <!-- Hackathon 2 -->
+    <div class="hackathon-card">
+
+      <h4>Gamification Era</h4>
+      <p>Play for Fun and Win prizes.</p>
+      <ul>
+        <li>💰 Entry Fee - ₹200 per Team or Squad</li>
+        <li>📅 <span id="timer2">Loading...</span></li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXlZVBkm_GBYOiA4MelRl0GsFDC-YYLMtyvBa8OInsm1l_Ug/viewform" target="_blank" class="hackathon-btn">Register Now</a>
+    </div>
+
+    <!-- Hackathon 3 -->
+    <div class="hackathon-card">
+      
+      <h4>AI Innovators Challenge</h4>
+      <p>Push the boundaries of AI and Machine Learning applications.</p>
+      <ul>
+        <li>💰 Entry Fee - ₹500 per Group</li>
+        <li>📅 <span id="timer3">Loading...</span></li>
+      </ul>
+      <a href="https://forms.gle/your-link3" target="_blank" class="hackathon-btn">Register Now</a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    #hackathon {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hackathon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.hackathon-card {
+  background: var(--section-gradient);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.hackathon-img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.hackathon-card h4 {
+  margin-top: 0.8rem;
+}
+
+.hackathon-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+.hackathon-btn {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hackathon-btn:hover {
+  background: #3e8e41;
+}
+
+@media (max-width: 768px) {
+  .hackathon-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hackathon-card.closed::after {
+  content: "Registration Closed";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+
+
+</style>
+
+<script>
+  function startCountdown(dateString, elementId, cardSelector) {
+  let targetDate = new Date(dateString).getTime();
+
+  let timer = setInterval(function () {
+    let now = new Date().getTime();
+    let distance = targetDate - now;
+
+    if (distance < 0) {
+      // Change card style to closed
+      let card = document.querySelector(cardSelector);
+      card.style.background = "linear-gradient(135deg, #555, #333)";
+      card.querySelector(".hackathon-btn").innerText = "Registration Closed";
+      card.querySelector(".hackathon-btn").style.background = "#777";
+      card.querySelector(".hackathon-btn").style.cursor = "not-allowed";
+      card.querySelector(".hackathon-btn").removeAttribute("href");
+      document.getElementById(elementId).innerHTML = "Event Started";
+      clearInterval(timer);
+      return;
+    }
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById(elementId).innerHTML =
+      `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }, 1000);
+}
+
+// Start countdowns with card selectors
+startCountdown("Sep 15, 2025 09:00:00", "timer1", ".hackathon-card:nth-child(1)");
+startCountdown("Oct 10, 2025 10:00:00", "timer2", ".hackathon-card:nth-child(2)");
+startCountdown("Nov 5, 2025 08:00:00", "timer3", ".hackathon-card:nth-child(3)");
+
+
+
+</script>
+
+  <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- About -->
+    <div class="footer-section">
+      <h4>About Me</h4>
+      <p>I’m a passionate developer sharing my projects, blogs, and hosting hackathons to inspire and connect with tech enthusiasts.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:yourname@example.com">krishna.techx.31@gmail.com</a></p>
+      <p>Phone: <a href="tel:+911234567890">+91 9877938126</a></p>
+      <p>Location: Jalandhar, Punjab, India</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#hackathon">Hackathons</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h4>Follow Me</h4>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/pixel2predict" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Suman Krishna. All Rights Reserved.</p>
+  </div>
+</footer>
+<style>
+    .footer {
+  background: var(--section-gradient);
+  color: white;
+  padding: 2rem 1rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section a, .footer-section li {
+  font-size: 0.95rem;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin: 0.4rem 0;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.4rem;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff9800;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
+}
+
+</style>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    const themeBtn = document.querySelector('.theme-toggle');
+    const body = document.body;
+
+    // Mobile menu
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Theme mode state: 'auto', 'light', 'dark'
+    let themeMode = 'auto';
+
+    // Apply theme based on mode
+    function applyTheme() {
+      if (themeMode === 'light') {
+        body.classList.remove('dark');
+      } else if (themeMode === 'dark') {
+        body.classList.add('dark');
+      } else {
+        // Auto mode
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        body.classList.toggle('dark', prefersDark);
+      }
+    }
+
+    // Listen for OS theme changes in auto mode
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (themeMode === 'auto') applyTheme();
+    });
+
+    // Theme toggle button click
+    themeBtn.addEventListener('click', () => {
+      if (themeMode === 'auto') {
+        themeMode = 'light';
+        themeBtn.textContent = '🌞 Light Mode';
+      } else if (themeMode === 'light') {
+        themeMode = 'dark';
+        themeBtn.textContent = '🌙 Dark Mode';
+      } else {
+        themeMode = 'auto';
+        themeBtn.textContent = '🌓 Auto Mode';
+      }
+      applyTheme();
+    });
+
+    // Initial theme
+    applyTheme();
+  </script>
+</body>
+</html>
