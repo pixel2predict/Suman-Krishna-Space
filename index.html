@@ -185,7 +185,6 @@
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#blogs">Blogs</a></li>
-        <li><a href="#hackathons">Hackathons</a></li>
       </ul>
     </nav>
     <button class="theme-toggle">🌓 Auto Mode</button>
@@ -701,127 +700,6 @@ function closeBlogDetails(id) {
   document.getElementById(id).style.display = 'none';
 }
 </script>
-
- 
-
- <section id="hackathons">
-  <h3>💡 Upcoming Hackathons</h3>
-  <div class="hackathon-grid">
-
-    <!-- Hackathon 1 -->
-    <div class="hackathon-card">
-   
-      <h4>Lights Camera Hackathon</h4>
-      <p>A 3-hour Editing Challenge for innovation, teamwork, and big prizes.</p>
-      <ul>
-        <li>💰 Entry Fee - ₹100 per head</li>
-        <li>📅 <span id="timer1">Loading...</span></li>
-      </ul>
-      <a href="https://forms.gle/88BNzWk16dauUEK67" target="_blank" class="hackathon-btn">Register Now</a>
-    </div>
-
-    <!-- Hackathon 2 -->
-    <div class="hackathon-card">
-
-      <h4>Gamification Era</h4>
-      <p>Play for Fun and Win prizes.</p>
-      <ul>
-        <li>💰 Entry Fee - ₹200 per Team or Squad</li>
-        <li>📅 <span id="timer2">Loading...</span></li>
-      </ul>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXlZVBkm_GBYOiA4MelRl0GsFDC-YYLMtyvBa8OInsm1l_Ug/viewform" target="_blank" class="hackathon-btn">Register Now</a>
-    </div>
-
-    <!-- Hackathon 3 -->
-    <div class="hackathon-card">
-      
-      <h4>AI Innovators Challenge</h4>
-      <p>Push the boundaries of AI and Machine Learning applications.</p>
-      <ul>
-        <li>💰 Entry Fee - ₹500 per Group</li>
-        <li>📅 <span id="timer3">Loading...</span></li>
-      </ul>
-      <a href="https://forms.gle/your-link3" target="_blank" class="hackathon-btn">Register Now</a>
-    </div>
-
-  </div>
-</section>
-
-<style>
-    #hackathon {
-  padding: 2rem;
-  text-align: center;
-}
-
-.hackathon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.hackathon-card {
-  background: var(--section-gradient);
-  border-radius: 12px;
-  padding: 1rem;
-  width: 300px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  color: white;
-}
-
-.hackathon-img {
-  width: 100%;
-  height: 180px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.hackathon-card h4 {
-  margin-top: 0.8rem;
-}
-
-.hackathon-card ul {
-  list-style: none;
-  padding: 0;
-  font-size: 0.9rem;
-  margin: 1rem 0;
-}
-
-.hackathon-btn {
-  display: inline-block;
-  background: #4caf50;
-  color: white;
-  padding: 0.7rem 1.2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.hackathon-btn:hover {
-  background: #3e8e41;
-}
-
-@media (max-width: 768px) {
-  .hackathon-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.hackathon-card.closed::after {
-  content: "Registration Closed";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff4d4d;
-  color: white;
-  padding: 5px 10px;
-  font-size: 0.8rem;
-  border-radius: 5px;
-}
-
-
-</style>
 
 <script>
   function startCountdown(dateString, elementId, cardSelector) {
